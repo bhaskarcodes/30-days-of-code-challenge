@@ -1,0 +1,39 @@
+import java.util.HashMap;
+import java.util.Map;
+/**
+ *
+ * @author Bhaskar
+ */
+import java.io.*;
+import java.util.StringTokenizer;
+import java.util.Scanner;
+public class Dictionary {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) throws IOException {
+        InputStreamReader x = new InputStreamReader(System.in);
+        BufferedReader y = new BufferedReader(x);
+        int n;
+        n = Integer.parseInt(y.readLine());
+        Map<String, Integer> dn = new HashMap<String, Integer>();
+        for (int p = 0; p < n; p++) {
+            StringTokenizer tk = new StringTokenizer(y.readLine());
+            String s = tk.nextToken();
+            int m = Integer.parseInt(tk.nextToken());
+            dn.put(s, m);
+        }
+        Scanner sc = new Scanner(System.in);
+        boolean flag = true;
+        String q = "q";
+        while (q != null && !(q.isEmpty())) {
+            q = y.readLine();
+            if (dn.containsKey(q)) {
+                System.out.println(q + "=" + dn.get(q));
+            } else if (q != null && !q.isEmpty()) {
+                System.out.println("Not found");
+            }
+        }
+    }
+}
