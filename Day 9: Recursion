@@ -1,0 +1,27 @@
+
+/**
+ *
+ * @author Bhaskar
+ */
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class fact {
+    public static void main(String[] args) throws IOException {
+        int n;
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        n = Integer.parseInt(in.readLine());
+        System.out.println(fact(n));
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    }
+    static int fact(int n){
+        if(n==1)
+            return 1;
+        else
+            return n*(n-1);
+    }
+}
