@@ -1,0 +1,24 @@
+import java.util.Scanner;
+/**
+ *
+ * @author Bhaskar
+ */
+public class binaryNum {
+    public static int countOnes(char[] str, char one) {
+        int maxLength = 0;
+        int tempLength = 0;
+        for (char c : str) {
+            tempLength = (c == one) ? 1 + tempLength : 0;
+            if (tempLength > maxLength) {
+                maxLength = tempLength;
+            }
+        }
+        return maxLength;
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
+        char[] str = Integer.toBinaryString(T).toCharArray();
+        System.out.println(countOnes(str,'1'));
+    }
+}
